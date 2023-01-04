@@ -23,6 +23,9 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: ghcr.io/genych/php82
+          tags: |
+            type=raw,value=latest
+            type=raw,value={{date 'YYYYMMDD'}}
       - name: build and push
         uses: docker/build-push-action@v3
         with:
